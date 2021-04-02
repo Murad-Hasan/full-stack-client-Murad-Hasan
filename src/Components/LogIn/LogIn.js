@@ -42,7 +42,7 @@ const LogIn = () => {
                 history.replace(from)
                 // console.log(userSignIn.username);
             }).catch((error) => {
-                console.log(error.message);
+                console.log('Login Error', error.message);
             });
                 }
 
@@ -62,11 +62,10 @@ const LogIn = () => {
                             setUserInfo(userSignIn)
                             setLoggedInUser(userSignIn)
                             history.replace(from)
-                            // console.log(userSignIn.username);
             
                         })
                         .catch((error) => {
-                            console.log(error.message);
+                            console.log('Login Error',error.message);
                 })
             }
 

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Button, Table } from "react-bootstrap";
+import { Button, Spinner, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
 import "./Order.css";
@@ -15,9 +15,9 @@ const Order = () => {
   return (
     <div>
       <div className="productinfo">
-        <h4> Your order information:</h4>
+        <h4> Your order: {showOrder.length}</h4>
             <Table responsive className=" table table-bordered border-primary ">
-            <thead className='table-info'>
+           {showOrder.length !== 0 &&  <thead className='table-info'>
                 <tr>
                 <th>Book Review</th>
                 <th>Book Name</th>
@@ -27,7 +27,7 @@ const Order = () => {
                 <th className='text-center'>Purchase Date</th>
                 <th className='text-center'>Delivery Status</th>
                 </tr>
-            </thead>
+            </thead>}
             <tbody>
                  {showOrder.map((order) => 
                  

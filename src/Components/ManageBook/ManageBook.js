@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Table } from 'react-bootstrap';
+import { Container, Spinner, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import grid from '../../icons/grid 1.png'
 import plus from '../../icons/plus 1.png'
@@ -21,7 +21,13 @@ const ManageBook = () => {
     fetch(`https://apricot-custard-46493.herokuapp.com/delete/${id}`,{
         method: "DELETE"
     })
-    .then(res => alert('Deleted successfully'))
+    .then(res => {
+      console.log("response",res);
+    })
+    .catch((error) => {
+      console.log('error massage for delete book',error);
+  })
+  setManageBook(manageBook.filter(user => user._id !== id))
    }
 
     return (
@@ -44,7 +50,11 @@ const ManageBook = () => {
             </div>
           <div className="col-xl-9 col-lg-9 col-md-9 ml-2">
                         <h5 className="my-4  font-weight-bold text-left">Add Book</h5>
+                        {
+                                    manageBook.length === 0 &&   <div className='text-center'><Spinner animation="grow" /></div>
+                                } 
                             <Table striped bordered hover variant="secondary">
+                           
                                 <thead>
                                   <tr>
                                     <th>Book Name</th>
@@ -53,15 +63,15 @@ const ManageBook = () => {
                                     <th>Manage</th>
                                   </tr>
                                 </thead>
+                                
                                 <tbody>
-                                  
                                   {
                                       manageBook.map(book => <tr key={book._id}>
                                         <td>{book.bookName}</td>
                                         <td>{book.authorName}</td>
                                         <td>${book.bookPrice}</td>
                                         <td className='text-center'>
-                                        <img style={{cursor:'pointer'}} className='mr-2' src={update} width='25px' alt=""/>
+                                        <img className='mr-2' src={update} width='25px' alt=""/>
                                         <img style={{cursor:'pointer'}} onClick={() => deleteBook(book._id)} width='25px' src={remove} alt=""/>
                                         </td>
                                       </tr>)

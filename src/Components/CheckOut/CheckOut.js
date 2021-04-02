@@ -38,30 +38,31 @@ const handlePlaceOrder = () => {
 
   return (
     <div className="table-container">
-      <h2>Place Your Order Now: </h2>
-      <Table striped bordered hover className='table table-success table-striped'>
-        <thead>
+      <Table striped bordered hover className='table table-striped table-responsive-md'>
+          <thead className="table-success">
           <tr>
-            <th>Book Name</th>
+            <th className="text-center">Book Cover Page</th>
+            <th className="text-center">Book Name</th>
             <th className="text-center">Quantity</th>
             <th className="text-center">Price</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>{book.bookName || "Nothing Add"} </td>
-            {book.bookName ? <td className="text-center">1</td>:<td className="text-center">0</td>}
-            <td className="text-center">${book.bookPrice || 0}</td>
+            <td className="text-center"><img src={book.imageURL || 'Book Cover'} alt="Book Cover" height="300px" width="200px"/></td>
+            <td className='align-middle text-center'><h3>{book.bookName || "Nothing Add"}</h3> </td>
+            {book.bookName ? <td className="text-center align-middle">1</td>:<td className="text-center align-middle">0</td>}
+            <td className="text-center align-middle">${book.bookPrice || 0}</td>
           </tr>
-          <tr>
-            <td colSpan="2">Total</td>
+          <tr className="table-success">
+            <td colSpan="3">Total</td>
             <td className="text-center">${book.bookPrice || 0} </td>
           </tr>
         </tbody>
       </Table>
 
     {
-      book.bookName && <Button as={Link} to={'/order'} className="d-inline-block float-right" onClick={handlePlaceOrder}>Place Order</Button>
+      book.bookName && <Button className="d-inline-block float-right" onClick={handlePlaceOrder}>Place Order</Button>
     }
     <Button className="d-inline-block float-left mb-2"  variant='danger' as={Link} to={'/'}>Cancel</Button>
       
