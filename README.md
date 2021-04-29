@@ -11,10 +11,8 @@ In this website i use :
 
 In this website i implement crud functionalities.
 You can :-
-1.Add Book
-2.Remove a Book
-3.Checkout
-4.Place order
-You can login with google and facebook .
-This is also a responsive website...
+1.You can add new book and it's show in home page.
+2.If You want you can remove a book.
+3.You can order a book.
+4.You can login with google and facebook.
 Thanks.
