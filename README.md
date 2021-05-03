@@ -1,18 +1,30 @@
-Welcome to my first MERN stack project.
+# Online Book Shop
 
-In this website i use :
-1.React
-2.React-router
-3.React-bootstrap
-4.firebase
-5.express
-6.mongodb
-7.Node.js
+live Link: [Online Book Service]( https://event-planning-web.web.app/)
+### Short Overveiw
 
-In this website i implement crud functionalities.
-You can :-
-1.You can add new book and it's show in home page.
-2.If You want you can remove a book.
-3.You can order a book.
-4.You can login with google and facebook.
-Thanks.
+
+> An dynamic application using of Online Book Services where people can register themselves as customer and admin via login authentication and see their order and can delete there order or add book in home page.
+ 
+ 
+## Features:
+
+
+- [x] Register new user
+- [x] Sign-in existing user
+- [x] They can order any book
+- [x] They can see all order
+- [x] Admin Control
+
+
+## Technology Used:
+- [x] ReactJs
+- [x] MongoDB
+- [x] NodeJs
+- [x] ExpressJs
+- [x] React-bootstrap
+- [x] HTML and CSS
+- [x] Firebase
+- [x] Netlify
+- [x] GitHub
+- [x] Heroku
